@@ -55,7 +55,11 @@ public class CashMachine {
 
     @Override
     public String toString() {
-        return accountData != null ? accountData.toString() : "Try account 1000, 2000, 3000 or 4000 and click submit.";
+        if (accountData != null)
+            return accountData.toString() + overDraftWarning();
+        else
+            return "Try account 1000, 2000, 3000 or 4000 and click submit.";
+//        return accountData != null ? accountData.toString() : "Try account 1000, 2000, 3000 or 4000 and click submit.";
     }
 
     private <T> void tryCall(Supplier<ActionResult<T> > action, Consumer<T> postAction) {
@@ -71,5 +75,9 @@ public class CashMachine {
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
+    }
+
+    private String overDraftWarning() {
+        return accountData.getBalance() < 0 ? "Warning: This account is overdrawn." : "";
     }
 }
