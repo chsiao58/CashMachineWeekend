@@ -24,6 +24,7 @@ public class CashMachineApp extends Application {
         vbox.setPrefSize(600, 600);
 
         TextArea areaInfo = new TextArea();
+        areaInfo.setEditable(false);
 
         Button btnSubmit = new Button("Set Account ID");
         btnSubmit.setOnAction(e -> {

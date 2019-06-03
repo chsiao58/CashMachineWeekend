@@ -13,7 +13,7 @@ public final class AccountData {
     private final String email;
 
     private final float balance;
-    private final DecimalFormat decFormat = new DecimalFormat("#.00");
+    private final DecimalFormat decFormat = new DecimalFormat("0.00");
 
     AccountData(int id, String name, String email, float balance) {
         this.id = id;
