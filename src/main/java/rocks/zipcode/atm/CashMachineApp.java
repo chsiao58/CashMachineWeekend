@@ -146,7 +146,7 @@ public class CashMachineApp extends Application {
 
             areaInfo.setText(cashMachine.toString());
         });
-        
+
         btnLogout.setOnAction(e -> {
             cashMachine.exit();
 
